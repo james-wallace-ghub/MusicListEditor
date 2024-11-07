@@ -1,0 +1,29 @@
+// Declare FlatSharp attributes.
+
+attribute "fs_vector";
+attribute "fs_serializer";
+attribute "fs_valueStruct";
+
+namespace WWEMUS;
+
+table Music (fs_serializer)
+{
+    index: uint;
+    unk: byte;
+    name1: string;
+    name2: string;
+    flags: byte;
+    looppoint: float;//
+    unk2: uint;
+    unk3: uint;
+    unk4: uint;
+    unk5: uint;
+}
+
+//ulong
+table Musi (fs_serializer) {
+    slot:[Music];
+}
+root_type Musi;
+file_identifier "Musi";
+
