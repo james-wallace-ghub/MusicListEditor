@@ -1,3 +1,5 @@
+Now distributed with TRIBUTE, join the Discord at https://discord.gg/XqJdADVzG2 for more info.
+
 To use the tool use Open to open the MusicList.jsfb (this is usually found in the Audio section of bakedfile01.cak)
 
 The tool will show you how many slots are used, which can be paged up and down. You can also search by the slot name (where known) or the internal ID
