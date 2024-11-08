@@ -1,4 +1,4 @@
-﻿namespace MusOTron;
+namespace MusOTron;
 
 partial class Form1
 {
@@ -277,7 +277,7 @@ partial class Form1
         Controls.Add(Open);
         Margin = new Padding(5, 4, 5, 4);
         Name = "Form1";
-        Text = "MusicList editor";
+        Text = "MusicList editor (2K22)";
         Load += Form1_Load;
         ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
         ResumeLayout(false);
