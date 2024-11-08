@@ -12,12 +12,12 @@ table Music (fs_serializer)
     unk: byte;
     name1: string;
     name2: string;
-    flags: byte;
-    looppoint: float;//
+    looppoint: float;
+    flags: uint;
     unk2: uint;
     unk3: uint;
-    unk4: uint;
-    unk5: uint;
+    unk4: byte;
+    unk5: byte;
 }
 
 //ulong
