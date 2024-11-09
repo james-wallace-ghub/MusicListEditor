@@ -48,6 +48,8 @@ partial class Form1
         label15 = new Label();
         label11 = new Label();
         label17 = new Label();
+        button1 = new Button();
+        button3 = new Button();
         ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
         SuspendLayout();
         // 
@@ -95,33 +97,33 @@ partial class Form1
         // 
         // textBox3
         // 
-        textBox3.Enabled = false;
         textBox3.Location = new Point(920, 168);
         textBox3.Margin = new Padding(5, 4, 5, 4);
         textBox3.Name = "textBox3";
         textBox3.Size = new Size(145, 27);
         textBox3.TabIndex = 7;
         textBox3.TextAlign = HorizontalAlignment.Right;
+        textBox3.TextChanged += textBox3_TextChanged;
         // 
         // textBox4
         // 
-        textBox4.Enabled = false;
         textBox4.Location = new Point(-1, 168);
         textBox4.Margin = new Padding(5, 4, 5, 4);
         textBox4.Name = "textBox4";
         textBox4.Size = new Size(303, 27);
         textBox4.TabIndex = 8;
         textBox4.TextAlign = HorizontalAlignment.Right;
+        textBox4.TextChanged += textBox4_TextChanged;
         // 
         // textBox5
         // 
-        textBox5.Enabled = false;
         textBox5.Location = new Point(322, 168);
         textBox5.Margin = new Padding(5, 4, 5, 4);
         textBox5.Name = "textBox5";
         textBox5.Size = new Size(287, 27);
         textBox5.TabIndex = 9;
         textBox5.TextAlign = HorizontalAlignment.Right;
+        textBox5.TextChanged += textBox5_TextChanged;
         // 
         // textBox7
         // 
@@ -250,11 +252,35 @@ partial class Form1
         label17.TabIndex = 40;
         label17.Text = "0";
         // 
+        // button1
+        // 
+        button1.Location = new Point(374, 28);
+        button1.Margin = new Padding(5, 4, 5, 4);
+        button1.Name = "button1";
+        button1.Size = new Size(123, 27);
+        button1.TabIndex = 41;
+        button1.Text = "Add slot to end";
+        button1.UseVisualStyleBackColor = true;
+        button1.Click += button1_Click_1;
+        // 
+        // button3
+        // 
+        button3.Location = new Point(519, 28);
+        button3.Margin = new Padding(5, 4, 5, 4);
+        button3.Name = "button3";
+        button3.Size = new Size(152, 27);
+        button3.TabIndex = 42;
+        button3.Text = "Remove last slot";
+        button3.UseVisualStyleBackColor = true;
+        button3.Click += button3_Click_1;
+        // 
         // Form1
         // 
         AutoScaleDimensions = new SizeF(8F, 20F);
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(1066, 238);
+        Controls.Add(button3);
+        Controls.Add(button1);
         Controls.Add(label17);
         Controls.Add(label11);
         Controls.Add(label15);
@@ -305,4 +331,6 @@ partial class Form1
     private Label label15;
     private Label label11;
     private Label label17;
+    private Button button1;
+    private Button button3;
 }

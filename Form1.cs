@@ -169,7 +169,6 @@ public partial class Form1 : Form
     private void textBox7_TextChanged(object sender, EventArgs e)
     {
         float newcue = float.Parse(textBox7.Text);
-        //uint newcue = uint.Parse(textBox7.Text);
 
         if (parsed.Slot[currindex - 1].Looppoint != newcue)
         {
@@ -221,4 +220,61 @@ public partial class Form1 : Form
 
     }
 
+    private void button1_Click_1(object sender, EventArgs e)
+    {
+        Music template = parsed.Slot[parsed.Slot.Count - 1];
+        Music blank = new Music();
+        blank.Index = (uint)parsed.Slot.Count + 1;
+        blank.Name1 = "PLACEHOLDER " + blank.Index;
+        blank.Name2 = "TRACK NAME " + blank.Index;
+        blank.Looppoint = (float)0.0;
+        blank.Unk = template.Unk;
+        blank.Unk2 = template.Unk2;
+        blank.Unk3 = template.Unk3;
+        blank.Unk4 = template.Unk4;
+        blank.Unk5 = template.Unk5;
+        blank.Flags = template.Flags;
+        parsed.Slot.Add(blank);
+        label17.Text = parsed.Slot.Count.ToString();
+
+        currindex = parsed.Slot.Count;
+        ShowRecord(parsed);
+
+    }
+
+    private void button3_Click_1(object sender, EventArgs e)
+    {
+        parsed.Slot.RemoveAt(parsed.Slot.Count);
+        label17.Text = parsed.Slot.Count.ToString();
+
+        currindex = parsed.Slot.Count - 1;
+        ShowRecord(parsed);
+    }
+
+    private void textBox4_TextChanged(object sender, EventArgs e)
+    {
+        if (parsed.Slot[currindex - 1].Name1 != textBox4.Text)
+        {
+            parsed.Slot[currindex - 1].Name1 = textBox4.Text;
+        }
+    }
+
+    private void textBox5_TextChanged(object sender, EventArgs e)
+    {
+        if (parsed.Slot[currindex - 1].Name2 != textBox5.Text)
+        {
+            parsed.Slot[currindex - 1].Name2 = textBox5.Text;
+        }
+    }
+
+    private void textBox3_TextChanged(object sender, EventArgs e)
+    {
+        uint newindex = uint.Parse(textBox3.Text);
+
+        if (parsed.Slot[currindex - 1].Index != newindex)
+        {
+            parsed.Slot[currindex - 1].Index = newindex;
+        }
+
+    }
 }
