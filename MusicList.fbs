@@ -9,15 +9,16 @@ namespace WWEMUS;
 table Music (fs_serializer)
 {
     index: uint;
-    unk: byte;
+    unk: ushort;
     name1: string;
     name2: string;
     flags: byte;
     looppoint: float;//
-    unk2: uint;
-    unk3: uint;
-    unk4: uint;
-    unk5: uint;
+    index2a: uint;
+    hex3: uint;
+    unk8: uint;
+    unk9: uint;
+    unlock: byte;
 }
 
 //ulong

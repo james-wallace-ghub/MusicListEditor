@@ -50,6 +50,14 @@ partial class Form1
         label17 = new Label();
         button1 = new Button();
         button3 = new Button();
+        label5 = new Label();
+        textBox1 = new TextBox();
+        label6 = new Label();
+        textBox6 = new TextBox();
+        label7 = new Label();
+        textBox8 = new TextBox();
+        label8 = new Label();
+        textBox9 = new TextBox();
         ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
         SuspendLayout();
         // 
@@ -254,12 +262,12 @@ partial class Form1
         // 
         // button1
         // 
-        button1.Location = new Point(374, 28);
+        button1.Location = new Point(314, 28);
         button1.Margin = new Padding(5, 4, 5, 4);
         button1.Name = "button1";
-        button1.Size = new Size(123, 27);
+        button1.Size = new Size(183, 27);
         button1.TabIndex = 41;
-        button1.Text = "Add slot to end";
+        button1.Text = "Copy current slot to end";
         button1.UseVisualStyleBackColor = true;
         button1.Click += button1_Click_1;
         // 
@@ -268,17 +276,105 @@ partial class Form1
         button3.Location = new Point(519, 28);
         button3.Margin = new Padding(5, 4, 5, 4);
         button3.Name = "button3";
-        button3.Size = new Size(152, 27);
+        button3.Size = new Size(208, 27);
         button3.TabIndex = 42;
-        button3.Text = "Remove last slot";
+        button3.Text = "Remove end slot from list";
         button3.UseVisualStyleBackColor = true;
         button3.Click += button3_Click_1;
+        // 
+        // label5
+        // 
+        label5.AutoSize = true;
+        label5.Location = new Point(14, 224);
+        label5.Margin = new Padding(5, 0, 5, 0);
+        label5.Name = "label5";
+        label5.Size = new Size(169, 20);
+        label5.TabIndex = 44;
+        label5.Text = "Slot Flag (1= expanded)";
+        // 
+        // textBox1
+        // 
+        textBox1.Location = new Point(-1, 248);
+        textBox1.Margin = new Padding(5, 4, 5, 4);
+        textBox1.Name = "textBox1";
+        textBox1.Size = new Size(198, 27);
+        textBox1.TabIndex = 43;
+        textBox1.TextAlign = HorizontalAlignment.Right;
+        textBox1.TextChanged += textBox1_TextChanged_1;
+        // 
+        // label6
+        // 
+        label6.AutoSize = true;
+        label6.Location = new Point(278, 224);
+        label6.Margin = new Padding(5, 0, 5, 0);
+        label6.Name = "label6";
+        label6.Size = new Size(74, 20);
+        label6.TabIndex = 46;
+        label6.Text = "2nd Index";
+        // 
+        // textBox6
+        // 
+        textBox6.Location = new Point(278, 248);
+        textBox6.Margin = new Padding(5, 4, 5, 4);
+        textBox6.Name = "textBox6";
+        textBox6.Size = new Size(69, 27);
+        textBox6.TabIndex = 45;
+        textBox6.TextAlign = HorizontalAlignment.Right;
+        textBox6.TextChanged += textBox6_TextChanged;
+        // 
+        // label7
+        // 
+        label7.AutoSize = true;
+        label7.Location = new Point(480, 224);
+        label7.Margin = new Padding(5, 0, 5, 0);
+        label7.Name = "label7";
+        label7.Size = new Size(121, 20);
+        label7.TabIndex = 48;
+        label7.Text = "SDB Entry? (Hex)";
+        // 
+        // textBox8
+        // 
+        textBox8.Location = new Point(443, 248);
+        textBox8.Margin = new Padding(5, 4, 5, 4);
+        textBox8.Name = "textBox8";
+        textBox8.Size = new Size(187, 27);
+        textBox8.TabIndex = 47;
+        textBox8.TextAlign = HorizontalAlignment.Right;
+        textBox8.TextChanged += textBox8_TextChanged;
+        // 
+        // label8
+        // 
+        label8.AutoSize = true;
+        label8.Location = new Point(748, 224);
+        label8.Margin = new Padding(5, 0, 5, 0);
+        label8.Name = "label8";
+        label8.Size = new Size(122, 20);
+        label8.TabIndex = 50;
+        label8.Text = "Unlock (1 = True)";
+        // 
+        // textBox9
+        // 
+        textBox9.Location = new Point(736, 248);
+        textBox9.Margin = new Padding(5, 4, 5, 4);
+        textBox9.Name = "textBox9";
+        textBox9.Size = new Size(145, 27);
+        textBox9.TabIndex = 49;
+        textBox9.TextAlign = HorizontalAlignment.Right;
+        textBox9.TextChanged += textBox9_TextChanged;
         // 
         // Form1
         // 
         AutoScaleDimensions = new SizeF(8F, 20F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(1066, 238);
+        ClientSize = new Size(1066, 364);
+        Controls.Add(label8);
+        Controls.Add(textBox9);
+        Controls.Add(label7);
+        Controls.Add(textBox8);
+        Controls.Add(label6);
+        Controls.Add(textBox6);
+        Controls.Add(label5);
+        Controls.Add(textBox1);
         Controls.Add(button3);
         Controls.Add(button1);
         Controls.Add(label17);
@@ -333,4 +429,12 @@ partial class Form1
     private Label label17;
     private Button button1;
     private Button button3;
+    private Label label5;
+    private TextBox textBox1;
+    private Label label6;
+    private TextBox textBox6;
+    private Label label7;
+    private TextBox textBox8;
+    private Label label8;
+    private TextBox textBox9;
 }

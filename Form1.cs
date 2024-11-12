@@ -75,6 +75,11 @@ public partial class Form1 : Form
             textBox5.Text = record.Name2;
             textBox7.Text = record.Looppoint.ToString();
             textBox7.Enabled = true;
+            textBox1.Text = record.Flags.ToString();
+            textBox6.Text = record.Index2a.ToString("X");
+            //textBox10.Text = record.Index2b.ToString("X");
+            textBox8.Text = record.Hex3.ToString("X");
+            textBox9.Text = record.Unlock.ToString();
         }
         else
         {
@@ -222,18 +227,21 @@ public partial class Form1 : Form
 
     private void button1_Click_1(object sender, EventArgs e)
     {
-        Music template = parsed.Slot[parsed.Slot.Count - 1];
+        Music template = parsed.Slot[currindex - 1];
         Music blank = new Music();
         blank.Index = (uint)parsed.Slot.Count + 1;
+        blank.Unk = template.Unk;
         blank.Name1 = "PLACEHOLDER " + blank.Index;
         blank.Name2 = "TRACK NAME " + blank.Index;
-        blank.Looppoint = (float)0.0;
-        blank.Unk = template.Unk;
-        blank.Unk2 = template.Unk2;
-        blank.Unk3 = template.Unk3;
-        blank.Unk4 = template.Unk4;
-        blank.Unk5 = template.Unk5;
         blank.Flags = template.Flags;
+        blank.Looppoint = (float)0.0;
+        blank.Index2a = template.Index2a;
+        //blank.Index2b = template.Index2b;
+        blank.Hex3 = template.Hex3;
+        blank.Unk8 = template.Unk8;
+        blank.Unk9 = template.Unk9;
+        blank.Unlock = template.Unlock;
+
         parsed.Slot.Add(blank);
         label17.Text = parsed.Slot.Count.ToString();
 
@@ -275,6 +283,65 @@ public partial class Form1 : Form
         {
             parsed.Slot[currindex - 1].Index = newindex;
         }
+
+    }
+
+    private void textBox1_TextChanged_1(object sender, EventArgs e)
+    {
+        sbyte newindex = sbyte.Parse(textBox1.Text);
+
+        if (parsed.Slot[currindex - 1].Flags != newindex)
+        {
+            parsed.Slot[currindex - 1].Flags = newindex;
+        }
+
+    }
+
+    private void textBox6_TextChanged(object sender, EventArgs e)
+    {
+
+        byte newindex = Convert.ToByte(textBox6.Text,16);
+
+
+        if (parsed.Slot[currindex - 1].Index2a != newindex)
+        {
+            parsed.Slot[currindex - 1].Index2a = newindex;
+        }
+    }
+
+    private void textBox10_TextChanged(object sender, EventArgs e)
+    {
+
+        //byte newindex = Convert.ToByte(textBox10.Text, 16);
+
+
+        //if (parsed.Slot[currindex - 1].Index2b != newindex)
+        //{
+        //    parsed.Slot[currindex - 1].Index2b = newindex;
+        //}
+    }
+
+    private void textBox8_TextChanged(object sender, EventArgs e)
+    {
+
+        uint newindex = Convert.ToUInt32(textBox8.Text, 16);
+
+        if (parsed.Slot[currindex - 1].Hex3 != newindex)
+        {
+            parsed.Slot[currindex - 1].Hex3 = newindex;
+        }
+
+    }
+
+    private void textBox9_TextChanged(object sender, EventArgs e)
+    {
+        sbyte newindex = sbyte.Parse(textBox9.Text);
+
+        if (parsed.Slot[currindex - 1].Unlock != newindex)
+        {
+            parsed.Slot[currindex - 1].Unlock = newindex;
+        }
+
 
     }
 }
